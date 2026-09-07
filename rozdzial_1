@@ -1,0 +1,20 @@
+using System;
+
+public class Hello
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Podaj imie: ");
+        string imie = Console.ReadLine();
+
+        Console.Write ("Podaj ulubiony kolor: ");
+        string kolor = Console.ReadLine();
+
+        Console.Write ("Podaj ulubione zwierze: ");
+        string zwierze = Console.ReadLine();
+
+        Console.WriteLine ("Czesc " +imie+ " twoj ulubiony kolor to " +kolor+ ", a ulubione zwierze to " +zwierze);
+        Console.Write ("\nNacisnij klawisz aby przejsc dalej");
+        Console.ReadKey();
+    }
+}
