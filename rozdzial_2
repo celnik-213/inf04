@@ -1,0 +1,26 @@
+using System;
+
+public class Hello
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Podaj ocene: ");
+        string odpowiedz1 = Console.ReadLine();
+
+        Console.Write("Podaj ocene: ");
+        string odpowiedz2 = Console.ReadLine();
+
+        Console.Write("Podaj ocene: ");
+        string odpowiedz3 = Console.ReadLine();
+
+        double ocena1 = double.Parse(odpowiedz1);
+        double ocena2 = double.Parse(odpowiedz2);
+        double ocena3 = double.Parse(odpowiedz3);
+        double srednia = Math.Round((ocena1 + ocena2 + ocena3) / 3,2);
+        
+        Console.WriteLine ("Srednia ocen wynosi:  " +srednia);
+        
+        Console.Write ("\nNacisnij klawisz aby przejsc dalej");
+        Console.ReadKey();
+    }
+}
