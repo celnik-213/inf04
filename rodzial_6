@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Podaj rozmiar tablicy: ");
+        int n = int.Parse(Console.ReadLine());
+        int[] tablica = new int[n];
+
+        Console.WriteLine($"Podaj {n} elementow tablicy:");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Element {i + 1}: ");
+            tablica[i] = int.Parse(Console.ReadLine());
+        }
+
+        int minVal = tablica[0];
+        int maxVal = tablica[0];
+        int minPos = 1;
+        int maxPos = 1;
+
+        for (int i = 1; i < n; i++)
+        {
+            if (tablica[i] < minVal)
+            {
+                minVal = tablica[i];
+                minPos = i + 1;
+            }
+            if (tablica[i] > maxVal)
+            {
+                maxVal = tablica[i];
+                maxPos = i + 1;
+            }
+        }
+
+        Console.WriteLine($"\nNajmniejsza wartosc: {minVal} (na pozycji {minPos})");
+        Console.WriteLine($"Najwieksza wartosc: {maxVal} (na pozycji {maxPos})");
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            for (int j = 0; j < n - i - 1; j++)
+            {
+
+                if (tablica[j] < tablica[j + 1])
+                {
+                    int temp = tablica[j];
+                    tablica[j] = tablica[j + 1];
+                    tablica[j + 1] = temp;
+                }
+            }
+        }
+
+        Console.WriteLine("\nPosortowana tablica malejaco:");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(tablica[i] + ", ");
+        }
+    }
+}
