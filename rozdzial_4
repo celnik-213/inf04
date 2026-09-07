@@ -1,0 +1,29 @@
+using System;
+
+public class Hello
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Podaj liczbe: ");
+        string odpowiedz = Console.ReadLine();
+        
+        int liczba = int.Parse(odpowiedz);
+        int petla = 1;
+        int suma = 0;
+        
+        while(petla <= liczba)
+        {
+            if(petla % 2 == 0)
+            {
+                suma = suma + petla;    
+            }
+            
+            petla++;
+        }
+        
+        Console.WriteLine("\nSuma liczb parzystych wynosi: " + suma);
+        
+        Console.Write("\nNacisnij klawisz aby przejsc dalej");
+        Console.ReadKey();
+    }
+}
