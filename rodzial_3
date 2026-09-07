@@ -1,0 +1,36 @@
+using System;
+
+public class Hello
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Podaj ilosc punkt: ");
+        string odpowiedz = Console.ReadLine();
+        
+        double punkty = double.Parse(odpowiedz);
+        if(punkty > 100 || punkty < 0){
+            Console.WriteLine("Niepoprawne dane punktowe");
+            return;
+        }
+
+        if(punkty >=90)
+        {
+            Console.WriteLine("ocena bardzo dobra");
+        }
+        else if(punkty >=75 && punkty <=89)
+        {
+            Console.WriteLine("ocena dobra");
+        }
+        else if(punkty >= 50 && punkty <= 74)
+        {
+            Console.WriteLine("ocena dostateczna");
+        }
+        else
+        {
+            Console.WriteLine("ocena niedostateczna");  
+        }
+        
+        Console.Write ("\nNacisnij klawisz aby przejsc dalej");
+        Console.ReadKey();
+    }
+}
