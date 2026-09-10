@@ -1,0 +1,28 @@
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int liczba;
+        bool poprawne;
+
+        do
+        {
+            Console.Write("Podaj ocenę (10–99): ");
+            string wejscie = Console.ReadLine();
+
+            poprawne = int.TryParse(wejscie, out liczba) && liczba >= 10 && liczba <= 99;
+            if (!poprawne)
+
+            {
+                Console.WriteLine("Błąd: liczba musi być całkowita od 10 do 99");
+            }
+
+        } while (!poprawne);
+
+        Console.WriteLine($"Zapisano liczbe: {liczba}.");
+    }
+}
+//kod skopiowany i edytowany z notatki
