@@ -1,0 +1,48 @@
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+class KontoBankowe
+{
+    public double saldo { get; private set;}
+
+    public KontoBankowe()
+    {
+        this.saldo = 0.0;
+    }
+    public KontoBankowe(double saldoPoczatkowe)
+    {
+        this.saldo = saldoPoczatkowe;
+    }
+    public void Wplac(double kwota)
+    {
+        if (kwota > 0)
+        {
+            this.saldo += kwota;
+            Console.WriteLine($"Pomylsnie wplacono kwote: {kwota}. Obecny stan konta wynosi: {this.saldo}");
+        }
+        else
+        {
+            Console.WriteLine("Podana kwota jest niepoprawna");
+        }
+    }
+    public void Wyplac(double kwota)
+    {
+        if (kwota < this.saldo && kwota > 0)
+        {
+            this.saldo -= kwota;
+            Console.WriteLine($"Pomyslnie wyplacono kwote: {kwota}. Obecny stan konta wynosi: {this.saldo}");
+        }
+        else
+        {
+            Console.WriteLine("Podana kwota jest niepoprawna");
+        }
+    }
+    static void Main()
+    {
+        KontoBankowe konto  = new KontoBankowe();
+        konto.Wplac(100.50);
+        konto.Wyplac(50);
+        konto.Wplac(-10);
+        konto.Wyplac(150);
+    }
+}
