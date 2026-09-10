@@ -21,8 +21,13 @@ class Program
             }
 
         } while (!poprawne);
-
-        Console.WriteLine($"Zapisano liczbe: {liczba}.");
+        if(liczba %2 == 0)
+        {
+            Console.WriteLine($"Zapisana liczba: {liczba} jest parzysta." );
+        }else
+        {
+            Console.WriteLine($"Zapisana liczba: {liczba} jest nieparzysta.");
+        }
     }
 }
 //kod skopiowany i edytowany z notatki
