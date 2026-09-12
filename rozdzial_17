@@ -1,0 +1,45 @@
+using System;
+
+namespace WalidacjaPesel
+{
+    class Program
+    {
+        static void Main()
+        {
+            string[] pesele = { "55030101193", "90010112345", "85050554321", "00223001234" };
+            
+            int wynik = LiczbaKobiet(pesele);
+            Console.WriteLine($"Liczba kobiet w tablicy: {wynik}");
+        }
+
+        static char OkreslPlec(string pesel)
+        {
+            int cyfraPlci = pesel[9] - '0';
+            return (cyfraPlci % 2 == 0) ? 'K' : 'M';
+        }
+
+        /*
+         * Nazwa funkcji: LiczbaKobiet
+         * Opis dzialania: przyjmuje tablice numerow PESEL i zwraca liczbe kobiet
+         * Parametry: peseleTablica - tablica lancuchow z numerami PESEL
+         * Zwracana wartosc: liczba calkowita (int) oznaczajaca liczbe kobiet
+         * Autor: Wiktor M
+         */
+        static int LiczbaKobiet(string[] peseleTablica)
+        {
+            int licznikKobiet = 0;
+
+            foreach (string pesel in peseleTablica)
+            {
+                if (OkreslPlec(pesel) == 'K')
+                {
+                    licznikKobiet++;
+                }
+            }
+
+            return licznikKobiet;
+        }
+    }
+}
+
+//kod skopiowany i edytowany z notatki numery pesel wygenerowane 
