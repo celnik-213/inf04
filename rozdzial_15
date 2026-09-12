@@ -1,0 +1,100 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    /*
+     * Nazwa funkcji: WczytajWynikiUczniow
+     * Opis: Wczytuje od uzytkownika liczbe uczniow, a nastepnie punkty z testu dla kazdego z nich w zakresie 0–100.
+     * Parametry: brak
+     * Zwracana wartosc: lista wynikow punktowych wszystkich uczniow (List<int>)
+     * Autor: Wiktor M
+     */
+    static List<int> WczytajWynikiUczniow()
+    {
+        int liczbaUczniow = 0;
+
+        while (true)
+        {
+            Console.Write("Podaj liczbe uczniow: ");
+            string wejscie = Console.ReadLine();
+
+            if (int.TryParse(wejscie, out liczbaUczniow) && liczbaUczniow > 0)
+            {
+                break;
+            }
+
+            Console.WriteLine("Podaj poprawna liczbu uczniow wieksza od 0!");
+        }
+
+        List<int> wyniki = new List<int>();
+
+        for (int i = 1; i <= liczbaUczniow; i++)
+        {
+            while (true)
+            {
+                Console.Write("Podaj wynik ucznia " + i + " (0-100): ");
+                string wejscieWyniku = Console.ReadLine();
+
+                if (int.TryParse(wejscieWyniku, out int wynik) && wynik >= 0 && wynik <= 100)
+                {
+                    wyniki.Add(wynik);
+                    break;
+                }
+
+                Console.WriteLine("Wynik nie w zakresie od 0 do 100.");
+            }
+        }
+
+        return wyniki;
+    }
+
+    static double ObliczSredniaWynikow(List<int> wyniki)
+    {
+        if (wyniki.Count == 0)
+        {
+            return 0;
+        }
+
+        int suma = 0;
+        foreach (int wynik in wyniki)
+        {
+            suma += wynik;
+        }
+
+        return (double)suma / wyniki.Count;
+    }
+
+    static int PoliczZaliczajacych(List<int> wyniki, int progZaliczenia)
+    {
+        int licznik = 0;
+        foreach (int wynik in wyniki)
+        {
+            if (wynik >= progZaliczenia)
+            {
+                licznik++;
+            }
+        }
+
+        return licznik;
+    }
+
+    static void Main()
+    {
+        List<int> wynikiUczniow = WczytajWynikiUczniow();
+
+        if (wynikiUczniow.Count == 0)
+        {
+            Console.WriteLine("Blad.");
+            return;
+        }
+
+        double sredniaKlasy = ObliczSredniaWynikow(wynikiUczniow);
+        int liczbaZaliczonych = PoliczZaliczajacych(wynikiUczniow, 50);
+
+        Console.WriteLine();
+        Console.WriteLine("Sredni wynik klasy: " + sredniaKlasy);
+        Console.WriteLine("Liczba uczniow, ktorzy zaliczyli test (min. 50 pkt): " + liczbaZaliczonych);
+    }
+}
+//kod skopiowany i edytowany z notatki
