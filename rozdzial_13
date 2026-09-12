@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static bool WczytajOcenę(out int ocena)
+    {
+        ocena = 0;
+
+        while (true)
+        {
+            Console.Write("Podaj ocenę (1-6) lub wpisz 'koniec': ");
+            string tekst = Console.ReadLine();
+
+            if (tekst != null && tekst.Trim().ToLower() == "koniec")
+            {
+                return false;
+            }
+
+            if (!int.TryParse(tekst, out ocena))
+            {
+                Console.WriteLine("Wprowadzona wartość nie jest liczbą. Spróbuj ponownie.");
+                continue;
+            }
+
+            if (ocena < 1 || ocena > 6)
+            {
+                Console.WriteLine("Ocena musi mieścić się w zakresie 1-6.");
+                continue;
+            }
+
+            return true;
+        }
+    }
+
+    static void Main()
+    {
+        List<int> oceny = new List<int>();
+
+        while (true)
+        {
+            if (!WczytajOcenę(out int ocena))
+            {
+                break;
+            }
+
+            oceny.Add(ocena);
+        }
+
+        Console.WriteLine();
+
+        if (oceny.Count == 0)
+        {
+            Console.WriteLine("Nie wprowadzono żadnych ocen.");
+        }
+        else
+        {
+            int suma = 0;
+            foreach (int o in oceny)
+            {
+                suma += o;
+            }
+
+            double srednia = (double)suma / oceny.Count;
+
+            Console.WriteLine("Liczba wprowadzonych ocen: " + oceny.Count);
+            Console.WriteLine("Średnia ocen: " + srednia);
+        }
+    }
+}
+
+//kod napisany i edytowany z notatki
