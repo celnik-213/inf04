@@ -1,0 +1,77 @@
+using System;
+
+class Program
+{
+    /*
+     * Nazwa funkcji: WczytajLiczby
+     * Opis: Wczytuje od uzytkownika podana liczbe liczb calkowitych z uzyciem walidacji.
+     * Parametry: ilosc - liczba liczb do wczytania
+     * Zwracana wartosc: tablica wczytanych liczb calkowitych (int[])
+     * Autor: Wiktor M
+     */
+    static int[] WczytajLiczby(int ilosc)
+    {
+        int[] liczby = new int[ilosc];
+
+        for (int i = 0; i < ilosc; i++)
+        {
+            while (true)
+            {
+                Console.Write($"Podaj liczbe {i + 1}: ");
+                string wejscie = Console.ReadLine();
+
+                if (int.TryParse(wejscie, out int wynik))
+                {
+                    liczby[i] = wynik;
+                    break;
+                }
+
+                Console.WriteLine("To nie jest poprawna liczba calkowita. Sprobuj ponownie.");
+            }
+        }
+
+        return liczby;
+    }
+
+    static int ObliczSume(int[] liczby)
+    {
+        int suma = 0;
+        foreach (int liczba in liczby)
+        {
+            suma += liczba;
+        }
+        return suma;
+    }
+
+    static int PoliczDodatnie(int[] liczby)
+    {
+        int licznik = 0;
+        foreach (int liczba in liczby)
+        {
+            if (liczba > 0)
+            {
+                licznik++;
+            }
+        }
+        return licznik;
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Program analizujacy 5 liczb");
+        
+        int[] tablicaLiczb = WczytajLiczby(5);
+
+        int suma = ObliczSume(tablicaLiczb);
+        int dodatnie = PoliczDodatnie(tablicaLiczb);
+
+        Console.WriteLine();
+        Console.WriteLine("Suma podanych liczb wynosi: " + suma);
+        Console.WriteLine("Ilosc liczb dodatnich: " + dodatnie);
+
+        Console.WriteLine("\nNacisnij dowolny klawisz, aby zakonczyc...");
+        Console.ReadKey();
+    }
+}
+
+//kod skopiowany z notatki i edytowany
