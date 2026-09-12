@@ -1,0 +1,151 @@
+using System;
+
+namespace LoteriaLiczbowa
+{
+    class Program
+    {
+        const int LiczbWZestawie = 6;
+        const int MinWartosc = 1;
+        const int MaxWartosc = 49;
+
+        static void Main()
+        {
+            Console.WriteLine("Loteria liczbowa");
+
+            int liczbaZestawow = WczytajLiczbeZestawow();
+            int[,] zestawy = new int[liczbaZestawow, LiczbWZestawie];
+            Random generator = new Random();
+
+            WypelnijZestawy(zestawy, generator);
+            WyswietlZestawy(zestawy);
+
+            int[] liczniki = PoliczWystapienia(zestawy);
+            WyswietlWystapienia(liczniki);
+
+            int niewylosowane = PoliczNiewylosowane(liczniki);
+            Console.WriteLine($"\nLiczba liczb z przedzialu 1-49, ktore nie wystapily ani razu: {niewylosowane}");
+
+            Console.WriteLine("\nNacisnij dowolny klawisz, aby zakonczyc...");
+            Console.ReadKey();
+        }
+
+        /**********************************************
+        * Nazwa funkcji: WczytajLiczbeZestawow
+        * Opis dzialania: pobiera od uzytkownika dodatnia liczbe calkowita
+        *                  oznaczajaca liczbe zestawow do wylosowania
+        * Parametry: brak
+        * Zwracana wartosc: liczba calkowita dodatnia (int)
+        * Autor: Wiktor M
+        **********************************************/
+        static int WczytajLiczbeZestawow()
+        {
+            int liczba;
+            bool poprawne;
+
+            do
+            {
+                Console.Write("Podaj liczbe zestawow do wylosowania: ");
+                string wejscie = Console.ReadLine();
+
+                poprawne = int.TryParse(wejscie, out liczba) && liczba > 0;
+
+                if (!poprawne)
+                {
+                    Console.WriteLine("Blad: nalezy podac liczbe calkowita wieksza od zera.");
+                }
+            } while (!poprawne);
+
+            return liczba;
+        }
+
+        static void WypelnijZestawy(int[,] zestawy, Random generator)
+        {
+            int liczbaZestawow = zestawy.GetLength(0);
+
+            for (int wiersz = 0; wiersz < liczbaZestawow; wiersz++)
+            {
+                for (int kolumna = 0; kolumna < LiczbWZestawie; kolumna++)
+                {
+                    int wylosowana;
+
+                    do
+                    {
+                        wylosowana = generator.Next(MinWartosc, MaxWartosc + 1);
+                    } while (CzyZawiera(zestawy, wiersz, kolumna, wylosowana));
+
+                    zestawy[wiersz, kolumna] = wylosowana;
+                }
+            }
+        }
+
+        static bool CzyZawiera(int[,] zestawy, int wiersz, int ileWypelnione, int wartosc)
+        {
+            for (int kolumna = 0; kolumna < ileWypelnione; kolumna++)
+            {
+                if (zestawy[wiersz, kolumna] == wartosc)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        static void WyswietlZestawy(int[,] zestawy)
+        {
+            int liczbaZestawow = zestawy.GetLength(0);
+
+            Console.WriteLine("\nWylosowane zestawy:");
+            for (int wiersz = 0; wiersz < liczbaZestawow; wiersz++)
+            {
+                Console.Write($"Zestaw {wiersz + 1}: ");
+                for (int kolumna = 0; kolumna < LiczbWZestawie; kolumna++)
+                {
+                    Console.Write($"{zestawy[wiersz, kolumna],3}");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static int[] PoliczWystapienia(int[,] zestawy)
+        {
+            int[] liczniki = new int[MaxWartosc + 1];
+
+            int liczbaZestawow = zestawy.GetLength(0);
+            for (int wiersz = 0; wiersz < liczbaZestawow; wiersz++)
+            {
+                for (int kolumna = 0; kolumna < LiczbWZestawie; kolumna++)
+                {
+                    int wartosc = zestawy[wiersz, kolumna];
+                    liczniki[wartosc]++;
+                }
+            }
+
+            return liczniki;
+        }
+
+        static void WyswietlWystapienia(int[] liczniki)
+        {
+            Console.WriteLine("\nWystapienia poszczegolnych liczb:");
+            for (int liczba = MinWartosc; liczba <= MaxWartosc; liczba++)
+            {
+                Console.WriteLine($"Liczba {liczba,2}: {liczniki[liczba]} wystapien");
+            }
+        }
+        static int PoliczNiewylosowane(int[] liczniki)
+        {
+            int licznikNiewylosowanych = 0;
+
+            for (int liczba = MinWartosc; liczba <= MaxWartosc; liczba++)
+            {
+                if (liczniki[liczba] == 0)
+                {
+                    licznikNiewylosowanych++;
+                }
+            }
+
+            return licznikNiewylosowanych;
+        }
+    }
+}
+
+//kod skopiowany i edytowany z notatki
