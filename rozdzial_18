@@ -1,0 +1,85 @@
+using System;
+
+namespace SitoEratostenesa
+{
+    class Program
+    {
+        static void Main()
+        {
+            const int N = 100;
+            bool[] czyPierwsza = new bool[N + 1];
+
+            WykonajSito(czyPierwsza);
+
+            Console.WriteLine($"Liczby pierwsze w przedziale od 2 do {N}:");
+            for (int liczba = 2; liczba <= N; liczba++)
+            {
+                if (czyPierwsza[liczba])
+                {
+                    Console.Write(liczba + " ");
+                }
+            }
+            Console.WriteLine();
+
+            int liczbaPierwszych = PoliczLiczbyPierwsze(czyPierwsza);
+            Console.WriteLine($"Liczba znalezionych liczb pierwszych: {liczbaPierwszych}");
+
+            Console.WriteLine("\nNacisnij dowolny klawisz, aby zakonczyc...");
+            Console.ReadKey();
+        }
+
+        /**********************************************
+        * Nazwa funkcji: WykonajSito
+        * Opis dzialania: realizuje sito Eratostenesa, oznaczajac w tablicy
+        *                 liczby zlozone wartoscia false, a pierwsze wartoscia true
+        * Parametry: czyPierwsza - tablica logiczna indeksowana wartoscia liczby
+        * Zwracana wartosc: brak
+        * Autor: Wiktor M
+        **********************************************/
+        static void WykonajSito(bool[] czyPierwsza)
+        {
+            int n = czyPierwsza.Length - 1;
+
+            for (int i = 2; i <= n; i++)
+            {
+                czyPierwsza[i] = true;
+            }
+
+            for (int i = 2; i * i <= n; i++)
+            {
+                if (czyPierwsza[i])
+                {
+                    for (int wielokrotnosc = i * i; wielokrotnosc <= n; wielokrotnosc += i)
+                    {
+                        czyPierwsza[wielokrotnosc] = false;
+                    }
+                }
+            }
+        }
+
+        /*
+         * Nazwa funkcji: PoliczLiczbyPierwsze
+         * Opis dzialania: zlicza, ile liczb pierwszych znajduje sie w tablicy sita
+         * Parametry: czyPierwsza - tablica logiczna z zaznaczonymi liczbami pierwszymi
+         * Zwracana wartosc: liczba calkowita (int) oznaczajaca ilosc liczb pierwszych
+         * Autor: Wiktor M
+         */
+        static int PoliczLiczbyPierwsze(bool[] czyPierwsza)
+        {
+            int licznik = 0;
+            int n = czyPierwsza.Length - 1;
+
+            for (int i = 2; i <= n; i++)
+            {
+                if (czyPierwsza[i])
+                {
+                    licznik++;
+                }
+            }
+
+            return licznik;
+        }
+    }
+}
+
+// kod edytowany i skopiowany z notatki
