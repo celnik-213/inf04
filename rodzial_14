@@ -1,0 +1,88 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void ZapiszLiczby(string nazwaPliku)
+    {
+        Random losowy = new Random();
+
+        using (StreamWriter pisarz = new StreamWriter(nazwaPliku))
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                int liczba = losowy.Next(1, 101);
+                pisarz.WriteLine(liczba);
+            }
+        }
+
+        Console.WriteLine("Zapisano 10 losowych liczb do pliku " + nazwaPliku + ".");
+    }
+
+    static void OdczytajIPodsumujLiczby(string nazwaPliku)
+    {
+        if (!File.Exists(nazwaPliku))
+        {
+            Console.WriteLine("Plik " + nazwaPliku + " nie istnieje.");
+            return;
+        }
+
+        try
+        {
+            int suma = 0;
+            int min = int.MaxValue;
+            int max = int.MinValue;
+            int licznik = 0;
+
+            using (StreamReader czytnik = new StreamReader(nazwaPliku))
+            {
+                string linia;
+
+                while ((linia = czytnik.ReadLine()) != null)
+                {
+                    if (int.TryParse(linia, out int wartosc))
+                    {
+                        suma += wartosc;
+                        licznik++;
+
+                        if (wartosc < min)
+                        {
+                            min = wartosc;
+                        }
+
+                        if (wartosc > max)
+                        {
+                            max = wartosc;
+                        }
+                    }
+                }
+            }
+
+            if (licznik > 0)
+            {
+                Console.WriteLine("Wyniki analizy pliku:");
+                Console.WriteLine("Suma: " + suma);
+                Console.WriteLine("Najmniejsza liczba: " + min);
+                Console.WriteLine("Najwieksza liczba: " + max);
+            }
+            else
+            {
+                Console.WriteLine("Plik jest pusty lub nieprawidlowy liczb.");
+            }
+        }
+        catch (IOException)
+        {
+            Console.WriteLine("Wystapil blad na pliku.");
+        }
+    }
+
+    static void Main()
+    {
+        string plik = "losowe.txt";
+
+        ZapiszLiczby(plik);
+        OdczytajIPodsumujLiczby(plik);
+    }
+}
+
+//kod skopiowany i edytowany z notatki
