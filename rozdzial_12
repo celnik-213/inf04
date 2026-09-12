@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+
+abstract class Pracownik
+{
+    public string imie;
+
+    public Pracownik(string imie)
+    {
+        this.imie = imie;
+    }
+
+    public abstract double ObliczWynagrodzenie();
+}
+
+class PracownikEtatowy : Pracownik
+{
+    public double pensjaMiesieczna;
+
+    public PracownikEtatowy(string imie, double pensjaMiesieczna) : base(imie)
+    {
+        this.pensjaMiesieczna = pensjaMiesieczna;
+    }
+
+    public override double ObliczWynagrodzenie()
+    {
+        return pensjaMiesieczna;
+    }
+}
+
+class Zleceniobiorca : Pracownik
+{
+    public double stawkaGodzinowa;
+    public double liczbaGodzin;
+
+    public Zleceniobiorca(string imie, double stawkaGodzinowa, double liczbaGodzin) : base(imie)
+    {
+        this.stawkaGodzinowa = stawkaGodzinowa;
+        this.liczbaGodzin = liczbaGodzin;
+    }
+
+    public override double ObliczWynagrodzenie()
+    {
+        return stawkaGodzinowa * liczbaGodzin;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        List<Pracownik> pracownicy = new List<Pracownik>();
+        pracownicy.Add(new PracownikEtatowy("Artur", 500));
+        pracownicy.Add(new Zleceniobiorca("Wlazinek", 35, 100));
+        pracownicy.Add(new PracownikEtatowy("Zwolaczini", 3600));
+        pracownicy.Add(new Zleceniobiorca("FifiD", 50.0, 120.0));
+
+        double sumaWynagrodzen = 0;
+
+        foreach (Pracownik p in pracownicy)
+        {
+            double wynagrodzenie = p.ObliczWynagrodzenie();
+            sumaWynagrodzen += wynagrodzenie;
+            Console.WriteLine("Pracownik: " + p.imie + ", wynagrodzenie = " + wynagrodzenie.ToString("F2") + " zł");
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Łączna suma wynagrodzeń: " + sumaWynagrodzen.ToString("F2") + " zł");
+    }
+}
+
+//kod zmieninoy z kodu z notatek
