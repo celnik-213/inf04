@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    /*
+     * Nazwa funkcji: WczytajLiczbe
+     * Opis: Wczytuje od uzytkownika liczbe calkowita z podanego zakresu.
+     *       Obsluguje bledny format oraz wartosci spoza dozwolonego przedzialu.
+     * Parametry:
+     * komunikat - tekst zachety wyswietlany uzytkownikowi
+     * min - dolna granica zakresu
+     * max - gorna granica zakresu
+     * Zwracana wartosc: poprawna liczba calkowita (int)
+     * Autor: Wiktor & Gemini
+     */
+    static int WczytajLiczbe(string komunikat, int min, int max)
+    {
+        while (true)
+        {
+            Console.Write(komunikat);
+            string wejscie = Console.ReadLine();
+
+            if (!int.TryParse(wejscie, out int liczba))
+            {
+                Console.WriteLine("Wprowadzona wartosc nie jest liczba.");
+                continue;
+            }
+
+            if (liczba < min || liczba > max)
+            {
+                Console.WriteLine("Wartosc musi miescic sie w zakresie " + min + " do " + max + ".");
+                continue;
+            }
+
+            return liczba;
+        }
+    }
+
+    static double ObliczSredniaOcen(List<int> oceny)
+    {
+        if (oceny.Count == 0)
+        {
+            return 0;
+        }
+
+        int suma = 0;
+        foreach (int ocena in oceny)
+        {
+            suma += ocena;
+        }
+
+        return (double)suma / oceny.Count;
+    }
+
+    static int PoliczNiedostateczne(List<int> oceny)
+    {
+        int jedynki = 0;
+        foreach (int ocena in oceny)
+        {
+            if (ocena == 1)
+            {
+                jedynki++;
+            }
+        }
+        return jedynki;
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Oceny klasowe");
+
+        int liczbaUczniow = WczytajLiczbe("Podaj liczbe uczniow (1-40): ", 1, 40);
+
+        List<int> oceny = new List<int>();
+
+        for (int i = 1; i <= liczbaUczniow; i++)
+        {
+            int ocena = WczytajLiczbe("Podaj ocene ucznia nr " + i + " (1-6): ", 1, 6);
+            oceny.Add(ocena);
+        }
+
+        int najwyzsza = oceny[0];
+        int najnizsza = oceny[0];
+        foreach (int ocena in oceny)
+        {
+            if (ocena > najwyzsza) najwyzsza = ocena;
+            if (ocena < najnizsza) najnizsza = ocena;
+        }
+
+        double srednia = ObliczSredniaOcen(oceny);
+        int liczbaNiedostatecznych = PoliczNiedostateczne(oceny);
+
+        Console.WriteLine();
+        Console.WriteLine("Podsumowanie ocen");
+        Console.WriteLine("Ocena najwyzsza: " + najwyzsza);
+        Console.WriteLine("Ocena najnizsza: " + najnizsza);
+        Console.WriteLine("Srednia ocen: " + srednia.ToString("F2"));
+        Console.WriteLine("Liczba ocen niedostatecznych: " + liczbaNiedostatecznych);
+
+        Console.WriteLine("\nNacisnij dowolny klawisz, aby zakonczyc...");
+        Console.ReadKey();
+    }
+}
