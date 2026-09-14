@@ -1,0 +1,15 @@
+1. Czym jest metoda Main i jaką rolę pełni w programie?
+ Metoda main to punkt startowy każdego programu. To właśnie tutaj program zaczyna działać i to instrukcje
+ umieszczone w tym miejscu program wykonuje.
+
+2.Jaka jest różnica między metodami Console.WriteLine i Console.Write?
+ Console.WriteLine wypisuje treść i przechodzi do następnej linijki natomiast Console.Write Wypisuje treść i zostaje w obecnej linii kodu.
+
+3.Co zwraca metoda Console.ReadLine i w jakiej postaci są to dane?
+ Zwraca ona łańcuch znakó czyli typ string.
+
+4.Czym jest kompilacja i dlaczego jest potrzebna?
+ Kompilacja jest to tłumaczenie kodu na język maszynowy i jest potrzebny aby komputer mógł wykonać polecenia naszego kodu.
+
+5.Jakim znakiem kończymy każdą instrukcję w języku C#? 
+Każdą instrukcje kończymy znakiem ";".
