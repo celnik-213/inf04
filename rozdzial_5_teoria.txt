@@ -1,0 +1,10 @@
+1.Jakiego typu wartość zwraca metoda Console.ReadLine i dlaczego często wymaga konwersji? 
+Zwraca typ string i aby wprowadzoną liczbę można na niej wykonywać działania trzeba przekonwertować ją na typ int.
+2.Czym różni się instrukcja if/else if od konstrukcji switch i kiedy wygodniej zastosować switch? 
+If/else if sprawdza zakres i różne warunki zmiennej natomiast switch w zależności od konkretnej wartości dopiera odpowiedni przypadek. Jest wygodniejszy przy wielu stałych wartościach.
+3.Do czego służy operator % i jak za jego pomocą sprawdzić, czy liczba jest parzysta? 
+% — reszta z dzielenia, nazywana operatorem modulo. Za pomocą modulo można sprawdzić parzystość (liczba % 2 == 0)
+4.Dlaczego w mini–projekcie „Zgadnij liczbę" wybraliśmy pętlę do-while, a nie pętlę while? 
+Liczba prób nie jest z góry znana, ponieważ zależy od szczęścia i strategii gracza. Z tego powodu wybieramy pętlę do-while, która zawsze pyta przynajmniej raz, a warunek zakończenia sprawdza po każdej próbie. 
+5.Czym różni się działanie instrukcji break od instrukcji continue? 
+Instrukcja break kończy całą pętlę, natomiast continue pomija tylko bieżące powtórzenie i kontynuuje pętlę.

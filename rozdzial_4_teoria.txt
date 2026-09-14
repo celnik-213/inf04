@@ -1,0 +1,10 @@
+1.Czym jest iteracja i czym jest pętla nieskończona? 
+Każde przejście przez pętlę to jedna iteracja. Pętla nieskończona to taka która wykonuje się bez końca z powodu kiedy warunek w pętli nie może być spełniony. 
+2.Jaka jest podstawowa różnica między pętlą while a pętlą do-while? 
+Pętla while może nie wykonać się ani razu, jeśli warunek od początku jest fałszywy. Pętla do-while wykona się zawsze przynajmniej jeden raz, ponieważ warunek sprawdzamy dopiero po wykonaniu bloku.
+3.Z jakich trzech części składa się nagłówek pętli for? 
+Składa się z inicjalizacji licznika, warunku oraz jego modyfikacji. 
+4.Czym różni się działanie instrukcji break od instrukcji continue? 
+Instrukcja break kończy całą pętlę, natomiast continue pomija tylko bieżące powtórzenie i kontynuuje pętlę.
+5.Do czego najlepiej nadaje się pętla foreach?
+Służy do przeglądania wszystkich elementów zbioru danych, na przykład tablicy lub łańcucha znaków. Przechodzi ona przez każdy element po kolei, bez potrzeby ręcznego zarządzania licznikiem. 

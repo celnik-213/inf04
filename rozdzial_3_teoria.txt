@@ -1,0 +1,11 @@
+1.Czym różni się operator = od operatora ==? 
+Operator = jest to operator przypisania wartości do zmiennej na przykład int wiek = 17; zmienna wiek ma wartość 17, natomiast operator == oznacza równa wiek == 17 odpwowiedź true.
+2.Jaki wynik zwróci wyrażenie 17 % 5 i co oznacza operator %? 
+% — reszta z dzielenia, nazywana operatorem modulo. Wyrażenie 17 % 5 zwróci 2
+3.Kiedy cały warunek połączony operatorem && jest prawdziwy, a kiedy warunek połączony operatorem ||? 
+&& — koniunkcja, czyli „i". Cały warunek jest prawdziwy, gdy oba warunki są prawdziwe. 
+|| — alternatywa, czyli „lub". Cały warunek jest prawdziwy, gdy przynajmniej jeden warunek jest prawdziwy. 
+4.Do czego służy słowo break w instrukcji switch i co się stanie, jeśli je pominiemy? 
+Break; — kończy dany przypadek i przerywa dalsze sprawdzanie. Jego pominięcie powoduje błąd kompilacji w języku C#. 
+5.Jakiego typu wartość zwracają operatory porównania? 
+Zwracaj wartość true or flase czyli prawda albo fałsz.

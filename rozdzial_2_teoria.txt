@@ -1,0 +1,10 @@
+1.Wymień trzy cechy każdej zmiennej. 
+Każda zmienna posiada typ, nazwę oraz wartość.
+2.Jaka jest różnica między deklaracją a inicjalizacją zmiennej? 
+Deklaracja to poinformowanie programu, że tworzymy zmienną o określonym typie i nazwie. Inicjalizacja to przypisanie zmiennej pierwszej wartości. 
+3.Który typ danych wybierzemy do przechowywania ceny produktu z groszami, a który do liczby uczniów? Uzasadnij. 
+Ceny z groszami to zmiennej typu double ponieważ to zmienna która przechowuje liczby zmiennoprzecinkowe natomiast liczba uczniów to int z powodu etgo że to liczby całkowite.
+4.Dlaczego nie możemy bezpośrednio dodać do siebie dwóch wartości pobranych metodą Console.ReadLine? 
+Ponieważ wtedy wartość jest zapisana jako ciąg znaków typu string.
+5.Czym różni się zapis 'A' od zapisu "A"? 
+Zapis 'A' to pojedynczy znak typu char, natomiast "A" to łańcuch znaków typu string.
