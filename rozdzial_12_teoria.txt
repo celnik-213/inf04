@@ -1,0 +1,11 @@
+1.Wyjaśnij, czym różni się klasa bazowa od klasy pochodnej, podając własną analogię z życia codziennego. 
+Klasa, która udostępnia swoje elementy, nosi nazwę klasy bazowej, a klasa, która je przejmuje, nazywana jest klasą pochodną. Można to porównać do rodziny pojazdów. Każdy pojazd ma koła i potrafi się poruszać, więc te cechy umieszczamy w ogólnym pojęciu pojazdu. Samochód i motocykl to konkretne rodzaje pojazdów, które przejmują wspólne cechy, a dodatkowo wprowadzają własne
+
+2.Do czego służą słowa kluczowe virtual i override? Co się stanie, gdy pominiemy słowo override przy nadpisywaniu metody? 
+W klasie bazowej metodę przeznaczoną do nadpisania oznaczamy słowem virtual, czyli wirtualną. W klasie pochodnej dostarczamy jej nową wersję, oznaczoną słowem override, czyli nadpisującą. Dzięki temu kompilator wie, że pochodna celowo zmienia zachowanie metody bazowej. Gdybyśmy nie napisali słowa override, kompilator zgłosiłby ostrzeżenie, a metoda bazowa mogłaby zostać użyta wbrew naszym intencjom.
+
+3.Czym różni się klasa abstrakcyjna od zwykłej klasy bazowej?
+ Klasa abstrakcyjna to klasa, której nie można utworzyć operatorem new. Służy wyłącznie jako wzorzec dla klas pochodnych. Może zawierać metody abstrakcyjne, czyli takie, które nie mają treści, a jedynie deklarację. Każda klasa pochodna jest wówczas zobowiązana taką metodę nadpisać. 
+
+4.Podaj jedną istotną różnicę między dziedziczeniem po klasie a realizacją interfejsu.
+Interfejs można porównać do umowy: określa, co klasa musi udostępniać, ale nie mówi, jak ma to robić. Z przyjętego zwyczaju nazwy interfejsów rozpoczynamy wielką literą I, na przykład IOpisywalny. Klasa może realizować wiele interfejsów jednocześnie, co odróżnia je od dziedziczenia. 

@@ -1,0 +1,11 @@
+1.Wyjaśnij różnicę między klasą a obiektem, podając własną analogię.
+ Klasa jest to potocznie mówiąc projekt przepis a obiekt to właściwy cel dom, ciasto które ma swoje wyniki dane.
+
+2.Czym różni się pole od właściwości? Dlaczego stosowanie właściwości jest bezpieczniejsze niż udostępnianie pól publicznych? 
+Pola przechowują dane obiektu, a metody określają, co obiekt potrafi zrobić. Metoda działa w kontekście konkretnego obiektu i automatycznie korzysta z jego pól. To właśnie połączenie danych z operacjami stanowi istotę programowania obiektowego. 
+
+3.Wymień dwie cechy szczególne konstruktora, które odróżniają go od zwykłej metody.
+ Konstruktor to specjalna metoda wywoływana automatycznie podczas tworzenia obiektu operatorem new. Ma on dwie cechy szczególne: nazywa się dokładnie tak samo jak klasa oraz nie ma typu zwracanego, nawet void. 
+
+4.Co oznacza słowo kluczowe this w treści konstruktora i kiedy jest niezbędne? 
+Często nazwy parametrów konstruktora chcemy zachować takie same jak nazwy pól, ponieważ jest to czytelniejsze. Powstaje wtedy konflikt nazw, który rozwiązujemy słowem kluczowym this. Słowo this oznacza bieżący obiekt, czyli ten, który właśnie tworzymy. 

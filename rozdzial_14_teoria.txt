@@ -1,0 +1,11 @@
+1.Wyjaśnij, dlaczego dane zapisane w zmiennych znikają po zakończeniu programu, a dane zapisane do pliku pozostają dostępne. 
+Pamięć operacyjna komputera jest ulotna, co oznacza, że przechowuje dane tylko w czasie działania programu. Dysk twardy przechowuje dane trwale, dlatego informacje zapisane do pliku pozostają na nim nawet po wyłączeniu komputera. 
+
+2.Czym różni się działanie metody File.WriteAllText od metody File.AppendAllText? Podaj sytuację, w której każda z nich jest właściwym wyborem. 
+Metoda File.WriteAllText nadpisuje plik, co bywa kłopotliwe, gdy chcemy zachować poprzednie dane i jedynie dołożyć nowe. Do dopisywania na końcu pliku służy metoda File.AppendAllText, która działa podobnie, lecz nie kasuje dotychczasowej zawartości.
+
+3.Do czego służy konstrukcja using przy pracy z klasą StreamWriter i dlaczego jej stosowanie jest zalecane?
+ Bardzo ważne jest, aby po zakończeniu pracy strumień zamknąć, ponieważ otwarty plik blokuje zasoby systemu. Najbezpieczniej zapewnia to konstrukcja using, która automatycznie zamyka strumień, gdy program opuści jej blok, nawet jeśli wystąpi wyjątek. 
+
+4.Opisz, w jaki sposób metoda File.Exists pomaga zabezpieczyć program przed błędem podczas odczytu pliku.
+Metoda zwraca true, gdy plik o podanej nazwie istnieje, oraz false w przeciwnym razie. Dzięki temu możemy zawczasu zareagować na brak pliku i wyświetlić zrozumiały komunikat zamiast pozwolić, by program się zawiesił.  

@@ -1,0 +1,13 @@
+1.Wyjaśnij, czym jest wyjątek i co dzieje się z programem, gdy wyjątek nie zostanie obsłużony.
+ Wyjątek to sygnał o nieprawidłowej sytuacji, która pojawia się w trakcie działania programu i uniemożliwia poprawne wykonanie instrukcji. Gdy taka sytuacja wystąpi, mówimy, że program zgłasza wyjątek. 
+
+2.Opisz rolę każdego z trzech bloków konstrukcji try-catch-finally.
+ Kolejność jest następująca: najpierw wykonuje się blok try, następnie ewentualnie pasujący blok catch, a na końcu zawsze blok finally. Blok finally wykona się nawet wtedy, gdy w bloku try wszystko przebiegło bez błędów.
+
+3.Czym różni się metoda int.TryParse od metody int.Parse? W jakiej sytuacji wybór int.TryParse jest korzystniejszy?
+Metoda int.TryParse próbuje przekonwertować tekst na liczbę i informuje, czy się to udało. W odróżnieniu od int.Parse nie zgłasza błędu, lecz zwraca wartość logiczną true lub false. Wynik konwersji trafia do zmiennej podanej po słowie kluczowym out.
+
+4.Podaj nazwy dwóch typów wyjątków i opisz sytuacje, w których każdy z nich się pojawia. 
+FormatException — pojawia się przy nieudanej konwersji tekstu na liczbę, na przykład int.Parse("abc"). 
+
+OverflowException — pojawia się, gdy liczba jest poprawna, ale zbyt duża dla danego typu, na przykład wartość przekraczająca zakres typu int. 

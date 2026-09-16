@@ -1,0 +1,12 @@
+1.Wymień wszystkie elementy, które powinien zawierać nagłówek dokumentacyjny funkcji według wzoru z arkusza INF.04. 
+Nazwe funkcji, opis, opis parametrów, zwracaną wartość, autora.
+
+2.Wyjaśnij, dlaczego znaczące nazwy zmiennych i funkcji są ważniejsze niż nazwy krótkie, takie jak a czy t. 
+Nazwy jednoliterowe, takie jak a, x czy tab, nie niosą żadnej informacji i zmuszają czytelnika do domysłów. Nazwy opisowe, jak sumaOcen, liczbaUczniow czy wczytajWiek, od razu zdradzają swoje przeznaczenie. Wyjątkiem pozostaje jedynie licznik pętli, gdzie krótkie i jest powszechnie akceptowane. 
+
+3.Na czym polega zasada pojedynczej odpowiedzialności funkcji i jaką korzyść daje podział programu na funkcje?
+ Funkcja powinna realizować jedną, jasno określoną czynność, na przykład wczytanie danych, obliczenie wyniku albo wyświetlenie raportu. Taki podział nazywamy zasadą pojedynczej odpowiedzialności i znamy go już z lekcji o metodach z drugiego tygodnia. Dzięki niemu metoda Main staje się czytelnym planem działania, a szczegóły kryją się w osobnych funkcjach. 
+
+4.Podaj dwa przykłady, w jaki sposób program konsolowy powinien komunikować się z użytkownikiem.
+-Użytkownik nie zna kodu, więc to komunikaty prowadzą go przez działanie programu. 
+-Brak komunikatów sprawia, że program wydaje się zepsuty, nawet jeśli działa poprawnie. 
