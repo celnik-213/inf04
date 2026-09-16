@@ -1,0 +1,2 @@
+Wyjaśnij, dlaczego we wzorze na cyfrę kontrolną numeru PESEL stosujemy zewnętrzne % 10 w wyrażeniu (10 - reszta) % 10. Podaj konkretny przykład numeru, dla którego pominięcie tego fragmentu spowodowałoby błędne odrzucenie poprawnego numeru.
+Zewnętrzne % 10 we wzorze cyfry kontrolnej jest istotne. Gdy reszta z dzielenia sumy wynosi 0, wyrażenie 10 - 0 daje 10, a poprawna cyfra kontrolna nie może być dwucyfrowa. Dodatkowe % 10 zamienia 10 z powrotem na 0. To częsta pułapka, przez którą programy błędnie odrzucają poprawne numery. 44051401350

@@ -1,0 +1,2 @@
+Wyjaśnij, dlaczego tablicę liczników wystąpień deklarujemy o rozmiarze 50, skoro losujemy liczby tylko z przedziału od 1 do 49. Opisz również, co stałoby się, gdybyśmy zadeklarowali ją o rozmiarze 49. 
+Tablicę zliczającą deklarujemy o rozmiarze 50 dlatego że indeksy w C# zaczynają się od zera a my chcemy aby indeksy dla licznik[14] był 14. Gdybyśmy deklarowali 49 to indeksy były by o jeden mniejsze dla 14 indeks wynosił by 13 co było by nie logiczne dla użytkownika.

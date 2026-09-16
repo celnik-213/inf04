@@ -1,0 +1,2 @@
+Wyjaśnij, dlaczego arkusz wymaga, aby funkcja wyznaczająca NWD nie zawierała operacji wejścia–wyjścia. Opisz, jakie korzyści daje oddzielenie logiki obliczeniowej od komunikacji z użytkownikiem. 
+Jest to kluczowe ponieważ funkcja realizuje tylko obliczenia i zwraca wynik a cała komunikacja jest pozostawiona dla głównego programy. Takie podziały nazywamy oddzielaniem logiki od interfejsu.

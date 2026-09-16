@@ -1,0 +1,19 @@
+1.Wyjaśnij, dlaczego stosowanie zmiennych globalnych jest problematyczne i co należy stosować zamiast nich w podejściu strukturalnym.
+Zmienna globalna sprawia, że nie wiadomo, która metoda i kiedy ją zmienia, co utrudnia śledzenie programu i prowadzi do trudnych błędów. Przekazywanie danych przez parametry jasno pokazuje, co funkcja przyjmuje i co zwraca. To podejście jest czytelniejsze i bezpośrednio wymagane na egzaminie.  
+
+2.Wymień trzy błędy formalne, które mogą obniżyć ocenę mimo poprawnego działania programu.
+Zmienne globalne w podejściu strukturalnym, brak podziału na funkcje, brak komunikacji z użytkownikiem. 
+
+3.Dlaczego brak zrzutów ekranu lub błędna nazwa archiwum mogą spowodować utratę punktów, choć nie dotyczą samego kodu? 
+Te czynności nie wymagają wiedzy programistycznej, lecz nawyku dokładnego czytania polecenia i sprawdzenia, czy wszystko zostało dostarczone. Warto poświęcić ostatnie minuty egzaminu na ich kontrolę. To najprostsze do zdobycia punkty, których jednocześnie najłatwiej nie otrzymać przez nieuwagę. 
+
+4.Wymień co najmniej pięć punktów, które warto sprawdzić na liście kontrolnej przed oddaniem pracy. 
+-Czy nazwy zmiennych i funkcji są znaczące i opisują swoje przeznaczenie? 
+
+-Czy wskazana funkcja ma pełny nagłówek dokumentacyjny z numerem zdającego? 
+
+-Czy program poprawnie obsługuje błędne dane, na przykład za pomocą int.TryParse? 
+
+-Czy wcięcia są poprawne, a kod czytelny? 
+
+-Czy wykonano wymagane zrzuty ekranu pokazujące działanie programu? 

@@ -1,0 +1,20 @@
+1.Wymień wszystkie wymagania formalne postawione w treści zadania mini–egzaminu.
+-Rozwiązanie ma być napisane w podejściu strukturalnym, bez użycia zmiennych globalnych. 
+
+-Program musi zawierać co najmniej dwie funkcje poza metodą Main. 
+
+-Należy wykorzystać tablicę lub kolekcję do przechowywania pomiarów. 
+
+-Dane od użytkownika muszą być bezpiecznie walidowane. 
+
+-Program musi komunikować się z użytkownikiem czytelnymi komunikatami. 
+
+-Jedna wybrana funkcja musi zawierać pełny nagłówek dokumentacyjny. 
+
+2.Wyjaśnij, dlaczego warto rozplanować rozwiązanie i podzielić je na funkcje, zanim zacznie się pisać kod.
+Warto rozplanować rozwiązanie i podzielić je na funkcje aby uniknąć bałaganu, powtórzeń oraz monolitycznej metody Main.
+
+3.Za co w kryteriach samooceny przyznaje się punkty dotyczące formy kodu, a nie samego działania programu? Podaj co najmniej trzy takie kryteria. 
+-Program wczytuje kolejno pomiary z walidacją odpowiedniego zakresu,
+-Poprawne wyznaczenie temperatury najwyższej i najniższej,
+-Brak zmiennych globalnych, dane przekazywane przez parametry.
