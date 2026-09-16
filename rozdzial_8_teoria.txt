@@ -1,0 +1,14 @@
+1.Dlaczego mówimy o liczbach pseudolosowych, a nie o liczbach prawdziwie losowych? 
+Komputer nie potrafi wytworzyć liczb prawdziwie losowych, ponieważ działa według ściśle określonych reguł. Zamiast tego generuje liczby pseudolosowe, czyli takie, które sprawiają wrażenie przypadkowych, choć powstają na podstawie obliczeń.
+
+2.Jaki zakres wartości zwraca wywołanie generator.Next(1, 50) i dlaczego nie obejmuje on liczby 50? 
+Metoda Next ma kilka wariantów różniących się liczbą argumentów. Najczęściej używamy wariantu z dwoma argumentami, który losuje liczbę z zadanego przedziału. Należy pamiętać o jednej istotnej cesze: dolna granica jest włączna, a górna wyłączna. Oznacza to, że Next(1, 50) zwraca liczbę od 1 do 49, ale nigdy 50. 
+
+3.Dlaczego obiekt klasy Random warto utworzyć tylko raz, a nie w każdej iteracji pętli? 
+Obiekt Random tworzymy raz i korzystamy z niego wielokrotnie. Tworzenie nowego generatora w pętli może prowadzić do powtarzających się wyników, ponieważ generator startuje od wartości zależnej od zegara, a kolejne obiekty utworzone w krótkim odstępie czasu mogą otrzymać tę samą wartość początkową. 
+
+4.Na czym polega różnica między losowaniem z powtórzeniami a losowaniem bez powtórzeń na przykładzie loterii? 
+Loteria liczbowa wymaga, aby w jednym zestawie każda liczba była inna. Tymczasem generator nie pamięta, co wylosował wcześniej, więc może zwrócić tę samą wartość kilka razy. Musimy więc sami zadbać o unikalność, sprawdzając każdą nową liczbę przed dodaniem jej do zestawu. 
+
+5.Do czego służy tablica znaczników typu bool przy losowaniu bez powtórzeń? 
+Zmienna typu bool pełni rolę znacznika, czy kandydat jest już w zestawie. Licznik ile zwiększamy dopiero po pomyślnym dodaniu, dzięki czemu pętla while działa tak długo, aż zbierze sześć różnych liczb. To rozwiązanie jest przejrzyste i dobrze sprawdza się przy niewielkich zestawach. 

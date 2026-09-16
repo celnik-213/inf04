@@ -1,0 +1,14 @@
+1.Jakimi dwoma indeksami wskazujemy pojedynczy element tablicy dwuwymiarowej i co oznacza każdy z nich? 
+Pierwszy określa wiersz, drugi kolumnę.
+
+2.Czym różni się macierz.Length od macierz.GetLength(1) dla tablicy o rozmiarze 5 na 6? 
+Length zwraca łączną liczbę wszystkich komórek, Aby poznać liczbę wierszy lub kolumn osobno, korzystamy z metody GetLength. Length zwróci 30 GetLength(1) zwórci 6. 
+
+3.Co przechowuje pojedynczy wiersz w strukturze n×6 stosowanej w arkuszach INF.04?
+ W arkuszach INF.04 wielokrotnie pojawia się tablica o sześciu kolumnach i zmiennej liczbie wierszy. Typowy scenariusz to przechowywanie zestawów po sześć liczb, na przykład wyników losowań w grze liczbowej. Każdy wiersz reprezentuje jeden zestaw, a sześć kolumn to sześć liczb w tym zestawie. 
+
+4.Wymień dwie sytuacje, w których lista List<T> jest wygodniejsza od tablicy.
+ List(T) jest wygodniejsza gdy nie znamy wartości elementów, lub gdy liczba elementów ma się zmienić.
+
+5.Jakiej właściwości używamy do odczytania liczby elementów listy i czym różni się ona od właściwości tablicy?
+ Przejście po elementach listy realizujemy podobnie jak w tablicy. Możemy użyć pętli foreach, gdy potrzebujemy jedynie odczytać wartości, albo pętli for z indeksem, gdy zależy nam na pozycji elementu lub chcemy go modyfikować. 

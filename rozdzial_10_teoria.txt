@@ -1,0 +1,14 @@
+1.Czym różni się właściwość Length od metody, na przykład ToUpper, pod względem zapisu w kodzie? 
+Pod względem zapisu w kodzie różnią się tym że Length nie potrzebuje nawiasów natomiast ToUpper() potrzbuje na końcu nawiasy.
+
+2.Co zwraca metoda Split i do czego służy podawany jej separator? 
+Metoda Split dzieli łańcuch znaków na części według podanego znaku rozdzielającego, zwanego separatorem. Wynikiem jest tablica łańcuchów, którą możemy następnie przeglądać. Jest to jedna z najczęściej wykorzystywanych metod przy przetwarzaniu danych. 
+
+3.Czym różni się metoda int.TryParse od metody int.Parse przy próbie konwersji błędnego tekstu? 
+Metoda int.TryParse próbuje przekonwertować tekst na liczbę i informuje, czy się to udało. W odróżnieniu od int.Parse nie zgłasza błędu, lecz zwraca wartość logiczną true lub false. Wynik konwersji trafia do zmiennej podanej po słowie kluczowym out. 
+
+4.Dlaczego przed porównaniem odpowiedzi użytkownika warto zastosować metodę ToLower? 
+Warto ją zastosować aby różnica w wielkości liter została usnięta i tekst był rzetelnie sprawdzony.
+
+5.Jakie cechy powinien mieć dobry komunikat błędu?
+ omunikat błędu powinien być konkretny i pomocny. Zamiast ogólnikowego „błędne dane" wyjaśniamy, czego oczekujemy oraz podajemy przykład poprawnej wartości. Taka komunikacja spełnia wymóg zrozumiałej obsługi użytkownika z arkusza INF.04 i znacząco poprawia jakość programu.

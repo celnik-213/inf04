@@ -1,0 +1,14 @@
+1.Czym różni się parametr od argumentu? 
+W powyższym przykładzie "Anna" oraz "Tomasz" to argumenty, a imie to parametr, który kolejno przyjmuje te wartości. Rozróżnienie jest proste: parametr definiujemy, argument przekazujemy. 
+
+2.Co oznacza słowo void w definicji metody i kiedy je stosujemy? 
+Oznacza, że metoda niczego nie zwraca. 
+
+3.Jakie dwa zadania wykonuje instrukcja return? 
+Oblicza ale i zwraca wynik.
+
+4.Dlaczego metoda zmieniająca elementy przekazanej tablicy modyfikuje oryginał, a nie kopię? 
+  Gdy przekazujesz tablic do metody, nie kopiujesz jej zawartości ale przekazujesz referencje do miejsca w którym rzeczywiście się znajduje.
+ 
+5.Dlaczego arkusz INF.04 zaleca przekazywanie danych przez parametry zamiast korzystania ze zmiennych globalnych?
+Zmienna globalna to zmienna zadeklarowana poza wszystkimi metodami, do której każda metoda ma swobodny dostęp. Problem polega na tym, że gdy wiele metod może ją zmieniać, trudno przewidzieć, kto i kiedy nadał jej daną wartość. Taki kod staje się podatny na błędy i trudny do analizy.  
